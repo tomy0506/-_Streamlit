@@ -1,5 +1,6 @@
 streamlit==1.4.0
 numpy
+pip = 23.1.2
 pandas
 matplotlib==3.2.2
 scikit_learn==1.0.2
