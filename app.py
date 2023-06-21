@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import math
 import os
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 from sklearn.metrics import mean_absolute_percentage_error
 #from sklearn.model_selection import KFold
 import matplotlib
@@ -157,18 +157,42 @@ if button:
     st.markdown(mean_absolute_percentage_error(y_test, y_pred))
 
 # 시각화
-legend = ["observations", "median prediction"]
-fig, ax = plt.subplots(1, 1, figsize=(20, 8))
-y_test.plot(ax=ax)
-y_pred.plot(ax=ax)
-plt.grid(which="both")
-plt.legend(legend, loc="upper left")
-plt.xlabel("Timestamp")
-plt.xticks(rotation=10)
-plt.ylabel("Electricity Consumption")
-plt.title("CatBoostRegressor Consumption Forecast")
-plt.show()
-st.pyplot()
+import plotly.graph_objects as go
+
+# Create figure
+fig = go.Figure()
+
+# Add traces
+fig.add_trace(go.Scatter(x=y_test.index, y=y_test.values, name="observations"))
+fig.add_trace(go.Scatter(x=y_pred.index, y=y_pred.values, name="median prediction"))
+
+# Update layout
+fig.update_layout(
+    title="CatBoostRegressor Consumption Forecast",
+    xaxis=dict(title="Timestamp", tickangle=10),
+    yaxis=dict(title="Electricity Consumption"),
+    legend=dict(x=0, y=1, traceorder="normal"),
+    autosize=False,
+    width=800,
+    height=400,
+    showgrid=True
+)
+
+# Render plotly figure using st.plotly_chart()
+st.plotly_chart(fig)
+
+#legend = ["observations", "median prediction"]
+#fig, ax = plt.subplots(1, 1, figsize=(20, 8))
+#y_test.plot(ax=ax)
+#y_pred.plot(ax=ax)
+#plt.grid(which="both")
+#plt.legend(legend, loc="upper left")
+#plt.xlabel("Timestamp")
+#plt.xticks(rotation=10)
+#plt.ylabel("Electricity Consumption")
+#plt.title("CatBoostRegressor Consumption Forecast")
+#plt.show()
+#st.pyplot()
 
 
 
