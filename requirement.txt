@@ -1,7 +1,6 @@
 streamlit
 numpy
 pandas
-pyplot
 matplotlib
 sklearn.metrics
 datetime
