@@ -15,7 +15,7 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 st.title("기상 정보를 바탕으로 한 전력 수요 예측")
 
 #train_data (전력 수요)
-supply = pd.read_csv("C:/Users/one/Desktop/2차 인사이콘/elec.csv", encoding='cp949')
+supply = pd.read_csv("./elec.csv", encoding='cp949')
 supply["기준일시"] = pd.to_datetime(supply["기준일시"])
 supply = supply[['기준일시', '현재수요(MW)']]
 
