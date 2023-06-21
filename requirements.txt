@@ -13,8 +13,8 @@ sphinx-copybutton
 sphinx-design
 numpy
 pip==23.1.2
-pandas==1.5.3
+pandas==2.0.2
 scikit_learn==1.0.2
-datetime
+datetime==5.1
 catboost
-plotly
+plotly==5.15.0
