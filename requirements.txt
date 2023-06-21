@@ -14,8 +14,7 @@ sphinx-design
 numpy
 pip==23.1.2
 pandas
-matplotlib==3.2.2
 scikit_learn==1.0.2
 datetime
 catboost
-plotly.graph_objects
+plotly
