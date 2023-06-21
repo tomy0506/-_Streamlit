@@ -3,7 +3,7 @@ numpy
 pandas
 pyplot
 matplotlib
-pyplot
+matplotlib.pyplot
 sklearn.metrics
 datetime
 catboost
