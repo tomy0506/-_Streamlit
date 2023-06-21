@@ -13,7 +13,7 @@ sphinx-copybutton
 sphinx-design
 numpy
 pip==23.1.2
-pandas
+pandas==1.5.3
 scikit_learn==1.0.2
 datetime
 catboost
